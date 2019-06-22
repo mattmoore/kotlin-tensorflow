@@ -10,4 +10,10 @@ class TensorflowTest {
         assertEquals(Tensorflow().hello(), "Hello World!")
         println(Tensorflow().hello())
     }
+
+    @Test
+    fun testVersion() {
+        assertEquals(Tensorflow().version(), "v1")
+        println(Tensorflow().version())
+    }
 }

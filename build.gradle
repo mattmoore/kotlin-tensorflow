@@ -48,6 +48,9 @@ model {
         } else if (targetPlatform.operatingSystem.linux) {
             cCompiler.args '-I', "${org.gradle.internal.jvm.Jvm.current().javaHome}/include"
             cCompiler.args '-I', "${org.gradle.internal.jvm.Jvm.current().javaHome}/include/linux"
+            cCompiler.args '-I', "/usr/local/include"
+            cCompiler.args '-L', "/usr/local/lib"
+            cCompiler.args '-l', "tensorflow"
             cCompiler.args '-D_FILE_OFFSET_BITS=64'
         } else if (targetPlatform.operatingSystem.windows) {
             cCompiler.args "-I${org.gradle.internal.jvm.Jvm.current().javaHome}/include"
